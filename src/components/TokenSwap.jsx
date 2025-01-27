@@ -69,7 +69,7 @@ function TokenSwap({
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
         <BalanceCard label="ETH Balance" value={ethBalance} symbol="ETH" />
-        <BalanceCard label="DAPP Balance" value={tokenBalance} symbol="DAPP" />
+        <BalanceCard label="HiveCoin Balance" value={tokenBalance} symbol="HiveCoin" />
       </div>
 
       <div className="bg-gray-700 p-4 rounded-xl space-y-4">
@@ -81,7 +81,7 @@ function TokenSwap({
               ? handleEthToToken(e.target.value)
               : handleTokenToEth(e.target.value)
           }
-          symbol={swapDirection === "ethToToken" ? "ETH" : "DAPP"}
+          symbol={swapDirection === "ethToToken" ? "ETH" : "HiveCoin"}
         />
 
         <button
@@ -95,7 +95,7 @@ function TokenSwap({
           label={swapDirection === "ethToToken" ? "You Receive" : "You Receive"}
           value={valueOfOtherToken}
           readOnly
-          symbol={swapDirection === "ethToToken" ? "DAPP" : "ETH"}
+          symbol={swapDirection === "ethToToken" ? "HiveCoin" : "ETH"}
         />
       </div>
 
@@ -108,8 +108,8 @@ function TokenSwap({
         <Coins className="w-5 h-5" />
         <span>
           {swapDirection === "ethToToken"
-            ? "Swap ETH for DAPP"
-            : "Swap DAPP for ETH"}
+            ? "Swap ETH for HiveCoin"
+            : "Swap HiveCoin for ETH"}
         </span>
       </button>
 

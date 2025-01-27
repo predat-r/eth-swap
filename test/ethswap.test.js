@@ -20,7 +20,7 @@ contract("EthSwap", ([deployer, investor]) => {
   describe("Token deployment", async () => {
     it("Token has a name", async () => {
       const name = await token.name();
-      assert.equal("DApp Token", name);
+      assert.equal("HiveCoin Token", name);
     });
   });
   describe("EthSwap deployment", async () => {

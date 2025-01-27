@@ -86,7 +86,7 @@ function App() {
         <div className="flex items-center justify-center space-x-2 mb-8">
           <Coins className="w-8 h-8 text-blue-400" />
           <h1 className="text-2xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            DApp Token Swap
+            HiveCoin Instant Exchange
           </h1>
         </div>
 
