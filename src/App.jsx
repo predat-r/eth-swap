@@ -99,6 +99,8 @@ function App() {
             tokenBalance={tokenBalance}
             ethBalance={ethBalance}
             refreshBalances={refreshTokenAmounts}
+            ethLogo="/eth-logo.png"
+            hiveLogo="/hivecoin-logo.png"
           />
         ) : (
           <ConnectWallet />

@@ -10,7 +10,9 @@ function TokenSwap({
   tokenContract,
   tokenBalance,
   ethBalance,
-  refreshBalances
+  refreshBalances,
+  ethLogo,
+  hiveLogo
 }) {
   const [ethAmount, setEthAmount] = useState("");
   const [tokenAmount, setTokenAmount] = useState("");
@@ -66,10 +68,16 @@ function TokenSwap({
     setValueOfOtherToken(amount / 100);
   }
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-4">
-        <BalanceCard label="ETH Balance" value={ethBalance} symbol="ETH" />
-        <BalanceCard label="HiveCoin Balance" value={tokenBalance} symbol="HiveCoin" />
+    <div className="space-y-4">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+          <img src={ethLogo} alt="ETH" className="w-5 h-5" />
+          <span className="text-gray-300">ETH Balance: {ethBalance}</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src={hiveLogo} alt="HiveCoin" className="w-5 h-5" />
+          <span className="text-gray-300">HiveCoin Balance: {tokenBalance}</span>
+        </div>
       </div>
 
       <div className="bg-gray-700 p-4 rounded-xl space-y-4">
@@ -82,6 +90,7 @@ function TokenSwap({
               : handleTokenToEth(e.target.value)
           }
           symbol={swapDirection === "ethToToken" ? "ETH" : "HiveCoin"}
+          tokenLogo={swapDirection === "ethToToken" ? ethLogo : hiveLogo}
         />
 
         <button
@@ -96,6 +105,7 @@ function TokenSwap({
           value={valueOfOtherToken}
           readOnly
           symbol={swapDirection === "ethToToken" ? "HiveCoin" : "ETH"}
+          tokenLogo={swapDirection === "ethToToken" ? hiveLogo : ethLogo}
         />
       </div>
 
